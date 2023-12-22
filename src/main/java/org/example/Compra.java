@@ -1,6 +1,8 @@
-public class Compra2 {
+package org.example;
+
+public class Compra {
 	private int _iD;
 	private Object _idCompra;
 	private Object _fechaVenta;
-	public Historial2 _historial2;
+	public Historial _historial2;
 }
