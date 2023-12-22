@@ -7,7 +7,10 @@ public class Ficha_ejemplar {
 	public Ejemplar _unnamed_Ejemplar_14;
 	public Ejemplar _unnamed_Ejemplar2_15;
 
-	public void Comprobación_Libro() {
-		throw new UnsupportedOperationException();
+	public Boolean Comprobación_Libro(int id) {
+		if (id == _iD){
+			return true;
+		}
+		return false;
 	}
 }

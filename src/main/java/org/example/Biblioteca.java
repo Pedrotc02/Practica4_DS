@@ -6,25 +6,33 @@ import java.util.HashMap;
 
 
 public class Biblioteca {
-	public Usuario usuario;
+	public HashMap<Integer, Usuario> usuarios;
 	public Bibliotecario bibliotecario;
-	public HashMap prestamo;
+	public HashMap<Integer, Préstamo> prestamos;
 	public Catálogo catalogo;
 
-	public void Devuelve_Libro(int idPrestamo) {
-		LocalDateTime fechaDevolucion = prestamo._fechaDev;
+	public void Devuelve_Libro(int idPrestamo, int idUsuario) {
+		Préstamo presDevolver = prestamos.get(idPrestamo);
+		Usuario usuarioDevuelve = usuarios.get(idUsuario);
 
+		LocalDateTime fechaDevolucion = LocalDateTime.now();
 
-		if(fechaDevolucion.isAfter(prestamo._fechaTope)){
-			usuario._unnamed_Ficha_socio_25.Añadir_penalización();
+		if(fechaDevolucion.isAfter(presDevolver._fechaTope)){
+			usuarioDevuelve._unnamed_Ficha_socio_25.Añadir_penalización();
 		}else{
-			prestamo._ejemplar._unnamed_Ficha_ejemplar2_17._estado = "Disponible";
+			presDevolver._ejemplar._unnamed_Ficha_ejemplar2_17._estado = "Disponible";
 		}
 
-		prestamo._fechaDev = LocalDateTime.now();
-		prestamo._ejemplar._unnamed_Ficha_ejemplar2_17.Comprobación_Libro();
-		usuario._unnamed_Ficha_socio_25._unnamed_Historial2_19.Añadir_préstamo();
+		presDevolver._ejemplar._unnamed_Ficha_ejemplar2_17.Comprobación_Libro(presDevolver._ejemplar.get_iD());
+		usuarioDevuelve._unnamed_Ficha_socio_25._unnamed_Historial2_19.Añadir_préstamo(presDevolver);
+	}
 
+	public Ejemplar getEjemplar(String idEjemplar){
+		return catalogo.getLibro(idEjemplar);
+	}
+
+	public Usuario getUsuario(int id){
+		return usuarios.get(id);
 	}
 
 	public void Coger_libro() {

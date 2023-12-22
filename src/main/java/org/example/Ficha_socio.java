@@ -3,7 +3,7 @@ package org.example;
 public class Ficha_socio {
 	private int _iD;
 	private Object _idSocio;
-	private Object _estado;
+	private String _estado;
 	public Usuario _unnamed_Usuario2_18;
 	public Historial _unnamed_Historial2_19;
 
@@ -12,8 +12,10 @@ public class Ficha_socio {
 	}
 
 	public void Añadir_penalización() {
-		throw new UnsupportedOperationException();
+		_estado = "Penalizado";
 	}
+
+	public String get_estado(){return _estado;}
 
 	public void Dar_de_baja() {
 		throw new UnsupportedOperationException();

@@ -13,4 +13,8 @@ public class Ejemplar {
 	public Lector _unnamed_Lector2_16;
 	public Vector<Préstamo> _préstamo2s = new Vector<Préstamo>();
 	public Ficha_ejemplar _unnamed_Ficha_ejemplar2_17;
+
+	public int get_iD() {
+		return _iD;
+	}
 }

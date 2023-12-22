@@ -17,4 +17,6 @@ public class Préstamo {
 	public void Registra_devolución_libro() {
 		throw new UnsupportedOperationException();
 	}
+
+	public int get_iD(){return _iD;}
 }
