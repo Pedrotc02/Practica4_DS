@@ -4,8 +4,8 @@ public class Ficha_socio {
 	private int _iD;
 	private Object _idSocio;
 	private String _estado;
-	public Usuario _unnamed_Usuario2_18;
-	public Historial _unnamed_Historial2_19;
+	public Usuario usuario;
+	public Historial historial;
 
 	public void Comprobar_usuario() {
 		throw new UnsupportedOperationException();

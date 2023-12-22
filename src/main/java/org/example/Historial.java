@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public class Historial {
 	private int _iD;
-	public Ficha_socio _unnamed_Ficha_socio_20;
+	public Ficha_socio fichaSocio;
 	public HashMap<Integer, Préstamo> _prestamos;
 	public Compra compra;
 

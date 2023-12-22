@@ -3,7 +3,7 @@ package org.example;
 import java.util.HashMap;
 
 public class Catálogo {
-	public Biblioteca _unnamed_Biblioteca2_31;
+	public Biblioteca biblioteca;
 	public HashMap<String, Libro> libros;
 
 	public void Buscar_libro() {

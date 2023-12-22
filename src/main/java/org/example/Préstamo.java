@@ -11,7 +11,7 @@ public class Préstamo {
 	private Object _numProrrogas;
 	public Lector _lector2;
 	public Ejemplar _ejemplar;
-	public Biblioteca _unnamed_Biblioteca2_21;
+	public Biblioteca biblioteca;
 	public Historial _historial2;
 
 	public void Registra_devolución_libro() {

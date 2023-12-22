@@ -9,12 +9,12 @@ public class Libro {
 	private Object _iSBN;
 	private Object _páginas;
 	private Object _género;
-	public Catálogo _unnamed_Catálogo2_;
+	public Catálogo catalogo;
 	public Vector<Ejemplar> ejemplares = new Vector<Ejemplar>();
 
 	public Ejemplar getEjemplar(){
 		for (Ejemplar e: ejemplares){
-			if (e._unnamed_Ficha_ejemplar2_17._estado == "Disponible"){
+			if (e.fichaEjemplar._estado == "Disponible"){
 				return e;
 			}
 		}

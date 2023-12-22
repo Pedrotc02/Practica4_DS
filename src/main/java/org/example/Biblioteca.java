@@ -20,11 +20,11 @@ public class Biblioteca {
 		if(fechaDevolucion.isAfter(presDevolver._fechaTope)){
 			usuarioDevuelve._unnamed_Ficha_socio_25.Añadir_penalización();
 		}else{
-			presDevolver._ejemplar._unnamed_Ficha_ejemplar2_17._estado = "Disponible";
+			presDevolver._ejemplar.fichaEjemplar._estado = "Disponible";
 		}
 
-		presDevolver._ejemplar._unnamed_Ficha_ejemplar2_17.Comprobación_Libro(presDevolver._ejemplar.get_iD());
-		usuarioDevuelve._unnamed_Ficha_socio_25._unnamed_Historial2_19.Añadir_préstamo(presDevolver);
+		presDevolver._ejemplar.fichaEjemplar.Comprobación_Libro(presDevolver._ejemplar.get_iD());
+		usuarioDevuelve._unnamed_Ficha_socio_25.historial.Añadir_préstamo(presDevolver);
 	}
 
 	public Ejemplar getEjemplar(String idEjemplar){
