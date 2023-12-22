@@ -11,12 +11,19 @@ public class Biblioteca {
 	public HashMap<Integer, Préstamo> prestamos;
 	public Catálogo catalogo;
 
+	/**
+	 * Método de devolución de un libro. Comprueba si la entrega se hace en fecha correcta, si no aplica una penalización
+	 * al usuario
+	 * @param idPrestamo: Identificación del préstamo a devolver
+	 * @param idUsuario: Identificación del usuario que va a devolver el libro
+	 */
 	public void Devuelve_Libro(int idPrestamo, int idUsuario) {
 		Préstamo presDevolver = prestamos.get(idPrestamo);
 		Usuario usuarioDevuelve = usuarios.get(idUsuario);
 
 		LocalDateTime fechaDevolucion = LocalDateTime.now();
 
+		//Se comprueba si la fecha de devolución es posterior a la fecha máxima permitida de devolución, para aplicar penalización
 		if(fechaDevolucion.isAfter(presDevolver._fechaTope)){
 			usuarioDevuelve._unnamed_Ficha_socio_25.Añadir_penalización();
 		}else{
