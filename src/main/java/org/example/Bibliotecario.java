@@ -4,7 +4,7 @@ import org.example.Biblioteca;
 
 public class Bibliotecario extends Usuario {
 	private int _idBibliotecario;
-	public Biblioteca biblioteca;
+	public Biblioteca biblioteca = new Biblioteca();
 
 	/**
 	 * Método de denegación de un préstamo. Comprueba si hay alguna penalización vigente en el usuario que realiza el préstamo

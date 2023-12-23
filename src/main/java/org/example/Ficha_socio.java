@@ -17,6 +17,8 @@ public class Ficha_socio {
 
 	public String get_estado(){return _estado;}
 
+	public void set_estado(String e){ _estado = e; }
+
 	public void Dar_de_baja() {
 		throw new UnsupportedOperationException();
 	}

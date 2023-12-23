@@ -6,10 +6,10 @@ import java.util.HashMap;
 
 
 public class Biblioteca {
-	public HashMap<Integer, Usuario> usuarios;
+	public HashMap<Integer, Usuario> usuarios = new HashMap<>();
 	public Bibliotecario bibliotecario;
-	public HashMap<Integer, Préstamo> prestamos;
-	public Catálogo catalogo;
+	public HashMap<Integer, Préstamo> prestamos = new HashMap<>();
+	public Catálogo catalogo = new Catálogo();
 
 	/**
 	 * Método de devolución de un libro. Comprueba si la entrega se hace en fecha correcta, si no aplica una penalización
@@ -20,6 +20,9 @@ public class Biblioteca {
 	public void Devuelve_Libro(int idPrestamo, int idUsuario) {
 		Préstamo presDevolver = prestamos.get(idPrestamo);
 		Usuario usuarioDevuelve = usuarios.get(idUsuario);
+
+		if (presDevolver == null || usuarioDevuelve == null)
+			return;
 
 		LocalDateTime fechaDevolucion = LocalDateTime.now();
 
